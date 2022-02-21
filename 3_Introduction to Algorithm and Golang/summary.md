@@ -1,4 +1,4 @@
-# Resume Introduction to Algorithm and Golang 02/17/2022
+# Resume Introduction to Algorithm and Golang
 
 1. Algoritma adalah prosedur komputasi yang didefinisikan dengan baik yang mengambil beberapa nilai sebagai input dan menghasilkan beberapa nilai sebagai output
 

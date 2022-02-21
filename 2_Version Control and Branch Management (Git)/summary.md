@@ -1,5 +1,5 @@
 # RESUME Version Control and Branch Management (Git)
-## Tuliskan 3 poin yang dipelajari dari materi tersebut. Resume / ringkasan materi dapat disubmit melalui Github
+
 A. Versioning adalah suatu kegiatan untuk mengatur versi dari source code program. TOOLS yang biasa digunakan itu 3
   1. Version Control System (VCS)
   2. Source Code Management (SCM)
