@@ -19,7 +19,8 @@
 
 # TASK
 ### Problem 1
-Pada task ini, membuat sebuah program Untuk mengeluarkan luas tabung. Saya perlu tau rumusnya terlebih dahulu. untuk rumusnya sendiri yaitu seperti gambar dibawah ini ![rumus](./screenshots/rumus.png)
+Pada task ini, membuat sebuah program Untuk mengeluarkan luas tabung. Saya perlu tau rumusnya terlebih dahulu. untuk rumusnya sendiri yaitu seperti gambar dibawah ini 
+![rumus](./screenshots/rumus.png)
 
 Dengan rumus tersebut maka saya dapat menghitungnya dengan cara seperti kodingan berikut [1.luas_tabung.go](./praktikum/1.luas_tabung.go)
 ![1](./screenshots/1.png)
