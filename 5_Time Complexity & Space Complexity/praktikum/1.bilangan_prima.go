@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-func primeNumber(number int) bool {
+func primeNumber(number int) string {
 	for i := 2; i*i <= number; i++ {
 		if number%i == 0 {
-			return false
+			return "Bukan Bilangan Prima"
 		}
 	}
-	return true
+	return "Bilangan Prima"
 }
 
 func main() {

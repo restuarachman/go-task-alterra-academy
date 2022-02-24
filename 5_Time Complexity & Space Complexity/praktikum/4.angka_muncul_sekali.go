@@ -23,4 +23,6 @@ func angkaMunculSekali(angka string) []int {
 
 func main() {
 	fmt.Println(angkaMunculSekali("1234123"))
+	fmt.Println(angkaMunculSekali("76523752"))
+	fmt.Println(angkaMunculSekali("1122"))
 }
