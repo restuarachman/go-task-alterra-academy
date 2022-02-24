@@ -2,14 +2,14 @@ package main
 
 import "fmt"
 
-func palindrome(input string) bool {
+func palindrome(input string) string {
 	n := len(input)
 	for i := 0; i < n/2; i++ {
 		if input[i] != input[n-1-i] {
-			return false
+			return "Bukan Palindrome"
 		}
 	}
-	return true
+	return "Palindrome"
 }
 
 func main() {
