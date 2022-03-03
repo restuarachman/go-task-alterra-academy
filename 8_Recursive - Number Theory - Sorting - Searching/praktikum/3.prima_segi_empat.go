@@ -21,12 +21,12 @@ func primaSegiEmpat(high, wide, start int) {
 	}
 	start++
 	sum := 0
-	for i := 0; i < high; i++ {
+	for i := 0; i < wide; i++ {
 		j := 0
-		for j < wide {
+		for j < high {
 			if isPrime(start) {
 				sum += start
-				fmt.Print(start)
+				fmt.Print(start, " ")
 				j++
 			}
 			start++
