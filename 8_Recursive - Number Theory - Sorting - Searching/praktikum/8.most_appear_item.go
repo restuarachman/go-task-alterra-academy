@@ -9,6 +9,10 @@ type pair struct {
 	count int
 }
 
+func (f pair) String() string {
+	return fmt.Sprintf("%s->%d", f.name, f.count)
+}
+
 func MostAppearItem(items []string) []pair {
 	maping := make(map[string]int)
 
@@ -38,6 +42,7 @@ func MostAppearItem(items []string) []pair {
 		p = append(p, pairtemp)
 	}
 	p = insertion_sort(p)
+
 	return p
 }
 
