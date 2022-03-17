@@ -1,0 +1,185 @@
+use digital_outlet;
+
+db.operators.insertMany([
+  {name: "Telkomsel"},
+  {name: "XL"},
+  {name: "Mentari"},
+  {name: "IM3"},
+  {name: "ByU"}
+]);
+
+db.operators.insertMany([
+  {name : "Pulsa"},
+  {name : "Voucher Game"},
+  {name : "Kuota"}
+]);
+
+db.products.insertMany([
+  {
+    _id : 1, 
+    product_type : 1,
+    operator : 3,
+    code : "b001",
+    name : "dummy1",
+    status : 1
+  }, 
+  {
+    _id : 2, 
+    product_type : 1,
+    operator : 3,
+    code : "b002",
+    name : "dummy2",
+    status : 1
+  },
+  {
+    _id : 3, 
+    product_type : 2,
+    operator : 1,
+    code : "b003",
+    name : "dummy3",
+    status : 1
+  },
+  {
+    _id : 4, 
+    product_type : 2,
+    operator : 1,
+    code : "b004",
+    name : "dummy4",
+    status : 1
+  },
+  {
+    _id : 5, 
+    product_type : 2,
+    operator : 1,
+    code : "b005",
+    name : "dummy5",
+    status : 1
+  },
+  {
+    _id : 6, 
+    product_type : 3,
+    operator : 4,
+    code : "b006",
+    name : "dummy6",
+    status : 1
+  },
+  {
+    _id : 7, 
+    product_type : 3,
+    operator : 4,
+    code : "b007",
+    name : "dummy7",
+    status : 1
+  },
+  {
+    _id : 8, 
+    product_type : 3,
+    operator : 4,
+    code : "b008",
+    name : "dummy8",
+    status : 1
+  },
+]);
+
+db.products.updateMany({},
+[
+  {$set : {description : { $concat: ["dummy", " ", "$name"," ", "$code"]}}}  
+]);
+
+db.payment_methods.insertMany([
+  {_id:1, name : "Ovo", status:1},
+  {_id:2, name : "Gopay", status:1},
+  {_id:3, name : "Tunai", status:1}
+]);
+
+db.users.insertMany([
+  {_id : 1, name: "Restu", status:1, dob: new Date("2000-01-06"), gender : 'M'},
+  {_id : 2, name: "Aditya", status:1, dob: new Date("2001-04-04"), gender : 'M'},
+  {_id : 3, name: "Rachman", status:1, dob: new Date("2000-12-09"), gender : 'M'},
+  {_id : 4, name: "Ghina", status:1, dob: new Date("2002-10-24"), gender : 'F'},
+  {_id : 5, name: "Salsabila", status:1, dob: new Date("2003-02-23"), gender : 'F'}
+]);
+
+db.transactions.insertMany([
+  {_id : 1, user:1, payment_method:1, status:1, total_qty:3, total_price:9000},
+  {_id : 2, user:1, payment_method:2, status:1, total_qty:3, total_price:9000},
+  {_id : 3, user:1, payment_method:3, status:1, total_qty:3, total_price:9000},
+  {_id : 4, user:2, payment_method:1, status:1, total_qty:3, total_price:9000},
+  {_id : 5, user:2, payment_method:2, status:1, total_qty:3, total_price:9000},
+  {_id : 6, user:2, payment_method:3, status:1, total_qty:3, total_price:9000},
+  {_id : 7, user:3, payment_method:1, status:1, total_qty:3, total_price:9000},
+  {_id : 8, user:3, payment_method:2, status:1, total_qty:3, total_price:9000},
+  {_id : 9, user:3, payment_method:3, status:1, total_qty:3, total_price:9000},
+  {_id : 10, user:4, payment_method:1, status:1, total_qty:3, total_price:9000},
+  {_id : 11, user:4, payment_method:2, status:1, total_qty:3, total_price:9000},
+  {_id : 12, user:4, payment_method:3, status:1, total_qty:3, total_price:9000},
+  {_id : 13, user:5, payment_method:1, status:1, total_qty:3, total_price:9000},
+  {_id : 14, user:5, payment_method:2, status:1, total_qty:3, total_price:9000},
+  {_id : 15, user:5, payment_method:3, status:1, total_qty:3, total_price:9000},
+]);
+
+db.transaction_details.insertMany([
+  {_id:1, transaction:1, product:1, status:1, qty:1, price:3000},
+  {_id:2, transaction:1, product:2, status:1, qty:1, price:3000},
+  {_id:3, transaction:1, product:3, status:1, qty:1, price:3000},
+  {_id:4, transaction:2, product:1, status:1, qty:1, price:3000},
+  {_id:5, transaction:2, product:2, status:1, qty:1, price:3000},
+  {_id:6, transaction:2, product:3, status:1, qty:1, price:3000},
+  {_id:7, transaction:3, product:1, status:1, qty:1, price:3000},
+  {_id:8, transaction:3, product:2, status:1, qty:1, price:3000},
+  {_id:9, transaction:3, product:3, status:1, qty:1, price:3000},
+  {_id:10, transaction:4, product:1, status:1, qty:1, price:3000},
+  {_id:11, transaction:4, product:2, status:1, qty:1, price:3000},
+  {_id:12, transaction:4, product:3, status:1, qty:1, price:3000},
+  {_id:13, transaction:5, product:1, status:1, qty:1, price:3000},
+  {_id:14, transaction:5, product:2, status:1, qty:1, price:3000},
+  {_id:15, transaction:5, product:3, status:1, qty:1, price:3000},
+  {_id:16, transaction:6, product:1, status:1, qty:1, price:3000},
+  {_id:17, transaction:6, product:2, status:1, qty:1, price:3000},
+  {_id:18, transaction:6, product:3, status:1, qty:1, price:3000},
+  {_id:19, transaction:7, product:1, status:1, qty:1, price:3000},
+  {_id:20, transaction:7, product:2, status:1, qty:1, price:3000},
+  {_id:21, transaction:7, product:3, status:1, qty:1, price:3000},
+  {_id:22, transaction:8, product:1, status:1, qty:1, price:3000},
+  {_id:23, transaction:8, product:2, status:1, qty:1, price:3000},
+  {_id:24, transaction:8, product:3, status:1, qty:1, price:3000},
+  {_id:25, transaction:9, product:1, status:1, qty:1, price:3000},
+  {_id:26, transaction:9, product:2, status:1, qty:1, price:3000},
+  {_id:27, transaction:9, product:3, status:1, qty:1, price:3000},
+  {_id:28, transaction:10, product:1, status:1, qty:1, price:3000},
+  {_id:29, transaction:10, product:2, status:1, qty:1, price:3000},
+  {_id:30, transaction:10, product:3, status:1, qty:1, price:3000},
+  {_id:31, transaction:11, product:1, status:1, qty:1, price:3000},
+  {_id:32, transaction:11, product:2, status:1, qty:1, price:3000},
+  {_id:33, transaction:11, product:3, status:1, qty:1, price:3000},
+  {_id:34, transaction:12, product:1, status:1, qty:1, price:3000},
+  {_id:35, transaction:12, product:2, status:1, qty:1, price:3000},
+  {_id:36, transaction:12, product:3, status:1, qty:1, price:3000},
+  {_id:37, transaction:13, product:1, status:1, qty:1, price:3000},
+  {_id:38, transaction:13, product:2, status:1, qty:1, price:3000},
+  {_id:39, transaction:13, product:3, status:1, qty:1, price:3000},
+  {_id:40, transaction:14, product:1, status:1, qty:1, price:3000},
+  {_id:41, transaction:14, product:2, status:1, qty:1, price:3000},
+  {_id:42, transaction:14, product:3, status:1, qty:1, price:3000},
+  {_id:43, transaction:15, product:1, status:1, qty:1, price:3000},
+  {_id:44, transaction:15, product:2, status:1, qty:1, price:3000},
+  {_id:45, transaction:15, product:3, status:1, qty:1, price:3000},
+]);
+
+db.users.find({gender:"M"});
+
+db.products.find({_id:3});
+
+db.users.find({gender:"F"}).count();
+
+db.users.find().sort({name:1});
+
+db.users.find().limit(5);
+
+db.products.update({_id:1}, {$set:{name:"product dummy"}});
+
+db.products.update({_id:1}), {$set:{qty:3}});
+
+db.products.remove({_id:1});
+
+db.products.remove({product_type:1});
