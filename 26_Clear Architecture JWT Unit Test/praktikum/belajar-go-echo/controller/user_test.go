@@ -16,7 +16,7 @@ func TestUserControllerAdd(t *testing.T) {
 	e := echo.New()
 
 	newUserJson, _ := json.Marshal(map[string]interface{}{
-		"Email": "restu@gmail.com",
+		"email": "restu@gmail.com",
 	})
 	req := httptest.NewRequest(http.MethodGet, "/", bytes.NewBuffer(newUserJson))
 	req.Header.Set("Content-Type", "application/jsonn")
