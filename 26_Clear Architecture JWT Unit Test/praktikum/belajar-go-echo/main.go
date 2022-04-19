@@ -3,6 +3,7 @@ package main
 import (
 	"belajar-go-echo/config"
 	"belajar-go-echo/controller"
+	"belajar-go-echo/service"
 
 	"github.com/labstack/echo/v4"
 )
@@ -18,8 +19,10 @@ func main() {
 		panic(err)
 	}
 
+	us := service.NewDBUserService(*db)
+	uc := controller.NewUserController(us)
 	app := echo.New()
-	app.GET("/users", controller.GetAllUsers(db))
-	app.POST("/users", controller.CreateUser(db))
+	app.GET("/users", uc.Get)
+	app.POST("/users", uc.Add)
 	app.Start(":8080")
 }

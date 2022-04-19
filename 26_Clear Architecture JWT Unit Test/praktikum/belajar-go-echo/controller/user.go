@@ -2,42 +2,43 @@ package controller
 
 import (
 	"belajar-go-echo/model"
+	"belajar-go-echo/service"
 
 	"github.com/labstack/echo/v4"
-	"gorm.io/gorm"
 )
 
-func GetAllUsers(db *gorm.DB) echo.HandlerFunc {
-	return func(c echo.Context) error {
-		users := make([]model.User, 0)
-		err := db.Find(&users).Error
-		if err != nil {
-			return c.JSON(500, echo.Map{
-				"error": err.Error(),
-			})
-		}
-		return c.JSON(200, echo.Map{
-			"data": users,
-		})
+type UserController struct {
+	us service.UserService
+}
+
+func NewUserController(us service.UserService) UserController {
+	return UserController{
+		us: us,
 	}
 }
 
-func CreateUser(db *gorm.DB) echo.HandlerFunc {
-	user := model.User{}
-	return func(c echo.Context) error {
-		if err := c.Bind(&user); err != nil {
-			return c.JSON(400, echo.Map{
-				"error": err.Error(),
-			})
-		}
-		err := db.Create(&user).Error
-		if err != nil {
-			return c.JSON(500, echo.Map{
-				"error": err.Error(),
-			})
-		}
-		return c.JSON(200, echo.Map{
-			"data": user,
+func (uc UserController) Get(c echo.Context) error {
+	users, err := uc.us.Get()
+	if err != nil {
+		return c.JSON(500, echo.Map{
+			"error": err.Error(),
 		})
 	}
+	return c.JSON(200, echo.Map{
+		"data": users,
+	})
+}
+
+func (uc UserController) Add(c echo.Context) error {
+	newUser := model.User{}
+	c.Bind(&newUser)
+	user, err := uc.us.Add(newUser)
+	if err != nil {
+		return c.JSON(500, echo.Map{
+			"error": err.Error(),
+		})
+	}
+	return c.JSON(200, echo.Map{
+		"data": user,
+	})
 }

@@ -3,12 +3,13 @@ package config
 import (
 	"belajar-go-echo/model"
 
-	"gorm.io/driver/sqlite"
+	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
 func ConnectDB() (*gorm.DB, error) {
-	return gorm.Open(sqlite.Open("app.db"), &gorm.Config{})
+	dsn := "root:@tcp(127.0.0.1:3306)/test?charset=utf8mb4&parseTime=True&loc=Local"
+	return gorm.Open(mysql.Open(dsn), &gorm.Config{})
 }
 
 func MigrateDB(db *gorm.DB) error {
