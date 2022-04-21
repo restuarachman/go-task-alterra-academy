@@ -1,4 +1,4 @@
-# Compute Services
+# CI/CD
 
 1. CI atau Continuous Integration adalah sebuah proses otomatis untuk mengintegrasikan berbagai jenis code dari potensial source yang berbeda untuk dilakukan build dan juga testing.
 
