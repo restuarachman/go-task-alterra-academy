@@ -55,3 +55,8 @@ cd ..
 # sesuaikan keypair nya (i.e: laptop.pem)
 rsync -r -e "ssh -i ~/laptop.pem" merdekaMock2 ubuntu@54.179.163.193:/home/ubuntu
 ```
+
+# Run docker compose on server
+```bash
+docker-compose up -d
+```
