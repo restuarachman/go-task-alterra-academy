@@ -1,7 +1,12 @@
 # Compute Services
 
-1. CI atau Continuous Integration adalah sebuah proses otomatis untuk mengintegrasikan berbagai jenis code dari potensial source yang berbeda untuk dilakukan build dan juga testing.
+1. Deploymen adalah kegiatan yang bertujuan untuk menyebarkan aplikasi/produk yang telah dikerjakan oleh para pengembang seringkali untuk mengubah dari status sementara ke permanen.
 
-2. CD atau continous delivery atau continous deployment merupakan deployment yang dilakukan secara automerge ketika kita membuild aplikasinya berhasil
+2. Strategi Deployment
+* Big-Bang Deployment Strategy atau s ering disebut Replace Deployment Strategy
+* Rollout Deployment Strategy
+* Blue/Green Deployment Strategy
+* Canary Deployment Strategy
 
-3. tools yang digunakan untuk membuat ci/cd adalah code commit nya menggunakan git, untuk build menggunakan docker, scan&test menggunakan go(echo) dan sonar, release menggunakan serena, deploy menggunakan docker
+3. Simple deployment process merupakan serperti gambar berikut
+![](./simple%20deployment.jpg)
