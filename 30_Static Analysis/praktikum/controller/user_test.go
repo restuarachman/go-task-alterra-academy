@@ -59,10 +59,14 @@ func TestUserControllerGet(t *testing.T) {
 	fmt.Println(us.Get())
 	uc.Get(c)
 
-	var users []model.User
-	if err := json.Unmarshal(rec.Body.Bytes(), &users); err != nil {
+	response := map[string][]model.User{}
+	// users := []model.User{}
+
+	if err := json.Unmarshal(rec.Body.Bytes(), &response); err != nil {
+		t.Error(err)
 		t.Error("unmarhalling returned person failed")
 	}
+	users := response["data"]
 	if len(users) != 3 {
 		t.Errorf("expecting len(users) is 3, get %d", len(users))
 	}
